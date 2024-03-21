@@ -1,6 +1,7 @@
 import pinoHttp from "pino-http";
 import { logger } from "../commons/logger";
 
+// adiciona midleware de log para requisições http com pino e customiza o log
 const httpLogger = pinoHttp({
   logger,
   serializers: {
