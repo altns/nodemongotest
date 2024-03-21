@@ -45,3 +45,23 @@ export const deleteProduct = (id: string) => {
 export const listAllProducts = () => {
   return prisma.product.findMany();
 };
+
+export const listProductsAbovePrice = async (price: number) => {
+  return await prisma.product.findMany({
+    where: {
+      price: {
+        gt: price,
+      },
+    },
+  });
+};
+
+export const listProductsByDescription = async (keyword: string) => {
+  return await prisma.product.findMany({
+    where: {
+      description: {
+        contains: keyword,
+      },
+    },
+  });
+};
