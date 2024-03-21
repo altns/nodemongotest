@@ -7,7 +7,7 @@ import {
   update,
 } from "./controller/product.controller";
 import { validateSchema } from "../../midlewares/validateSchema";
-import { productSchema } from "./model/productSchema.model";
+import { productSchema } from "./schema/product.schema";
 
 const productRoutes = Router();
 

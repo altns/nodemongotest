@@ -1,5 +1,5 @@
 import pinoHttp from "pino-http";
-import { logger } from "../commons/logger";
+import { logger } from "../utils/logger";
 
 // adiciona midleware de log para requisições http com pino e customiza o log
 const httpLogger = pinoHttp({

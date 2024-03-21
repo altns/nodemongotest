@@ -1,32 +1,47 @@
-import { Product } from "../repository/product.repository";
+import prisma from "../../../../prisma/prismaConfig";
 
-const productRepository = new Product();
-
-export const createProduct = (
+export const createProduct = async (
   name: string,
   price: number,
   description?: string,
 ) => {
-  return productRepository.create(name, price, description);
+  return prisma.product.create({
+    data: {
+      name,
+      price,
+      description,
+    },
+  });
 };
 
-export const getProductById = (id: number) => {
-  return productRepository.findById(id);
+export const getProductById = (id: string) => {
+  return prisma.product.findUnique({
+    where: { id },
+  });
 };
 
 export const updateProduct = (
-  id: number,
+  id: string,
   name: string,
   price: number,
   description?: string,
 ) => {
-  return productRepository.update(id, name, price, description);
+  return prisma.product.update({
+    where: { id },
+    data: {
+      name,
+      price,
+      description,
+    },
+  });
 };
 
-export const deleteProduct = (id: number) => {
-  return productRepository.delete(id);
+export const deleteProduct = (id: string) => {
+  return prisma.product.delete({
+    where: { id },
+  });
 };
 
 export const listAllProducts = () => {
-  return productRepository.listAll();
+  return prisma.product.findMany();
 };
