@@ -78,3 +78,5 @@ Tempo de conclusão: 6h
 - Da maneira que fiz o sistema na etapa anterior também facilitou para implementear o banco de dados
 - Criei um env.example para colocar as variáveis necessárias para inciar o projeto
 - Trabalhar com o prisma em uma tarefa com pouco conteúdo foi bem simples, mas já consigo perceber algumas dificuldades em relação ao Mongoose
+
+Tempo de conclusão: 1h
