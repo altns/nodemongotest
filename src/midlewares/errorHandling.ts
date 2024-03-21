@@ -1,7 +1,7 @@
-// errorHandler.ts
 import { Request, Response, ErrorRequestHandler } from "express";
 import { logger } from "../commons/logger";
 
+// middleware para tratamento de erros
 export class HttpError extends Error {
   status: number;
 

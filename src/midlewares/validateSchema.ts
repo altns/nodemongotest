@@ -2,6 +2,7 @@ import { logger } from "../commons/logger";
 import { Request, Response, NextFunction } from "express";
 import { ZodSchema, ZodError } from "zod";
 
+//fundão destinada a validar o schema de uma requisição
 export const validateSchema = (schema: ZodSchema) => {
   return (req: Request, res: Response, next: NextFunction) => {
     try {

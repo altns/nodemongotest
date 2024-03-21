@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import path from "path";
 import { z } from "zod";
 
+// essa função carrega as variáveis de ambiente do arquivo .env e as valida
 dotenv.config({ path: path.join(process.cwd(), ".env") });
 
 const envVarsSchema = z.object({
