@@ -1,0 +1,11 @@
+// Esse ORM foi escolhido puramente por eu querer testar algo diferente do que já estou acostumado a usar
+// Apesar de não ser a escolha mais óbvia para um projeto com MongoDB, me permiti sair da zona de conforto
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
