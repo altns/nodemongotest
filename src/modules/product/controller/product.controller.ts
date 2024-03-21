@@ -4,6 +4,8 @@ import {
   deleteProduct,
   getProductById,
   listAllProducts,
+  listProductsAbovePrice,
+  listProductsByDescription,
   updateProduct,
 } from "../services/product.service";
 import { HttpError } from "../../../midlewares/errorHandling";
@@ -87,6 +89,37 @@ export const listAll = async (
 ) => {
   try {
     const products = await listAllProducts();
+    res.json(products);
+  } catch (error) {
+    next(handlePrismaError(error));
+  }
+};
+
+// essas duas são funções que utilizam query params
+// exemplo de uso: /products/price?price=10
+export const getProductsAbovePrice = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const price = parseFloat(req.query.price as string);
+    const products = await listProductsAbovePrice(price);
+    res.json(products);
+  } catch (error) {
+    next(handlePrismaError(error));
+  }
+};
+
+// exemplo de uso: /products/description?keyword=produto
+export const getProductsByDescription = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const keyword = req.query.keyword as string;
+    const products = await listProductsByDescription(keyword);
     res.json(products);
   } catch (error) {
     next(handlePrismaError(error));

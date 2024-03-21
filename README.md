@@ -23,6 +23,8 @@ Configure rotas básicas para operações CRUD em uma entidade fictícia "Produt
 Crie um modelo para "Produto" no MongoDB usando o ORM escolhido.
 Implemente rotas para operações CRUD na entidade "Produto", incluindo validações adequadas.
 
+<div id='parte3'/>
+
 ## Parte 3: Consultas Avançadas
 
 Implemente uma rota para listar produtos com preço acima de um valor especificado.
@@ -78,3 +80,15 @@ Tempo de conclusão: 6h
 - Da maneira que fiz o sistema na etapa anterior também facilitou para implementear o banco de dados
 - Criei um env.example para colocar as variáveis necessárias para inciar o projeto
 - Trabalhar com o prisma em uma tarefa com pouco conteúdo foi bem simples, mas já consigo perceber algumas dificuldades em relação ao Mongoose
+
+Tempo de conclusão: 1h
+
+<div id='parte3-an'/>
+
+## [Parte 3: Consultas Avançadas](#parte3)
+
+- Como eu imaginava essa foi a etapa mais tranquila de todas, mesmo sendo a primeira vez mexendo com prisma não tive dificuldades para realizar as querys
+- Foi realizado uma alteração no midleware de validação de dados com Zod para aceitar também query
+- Certas alterações em arquivos de maior complexidade eu sinto falta de testes unitários para manter o pleno funcionamento
+
+Tempo de conclusão: 10min
