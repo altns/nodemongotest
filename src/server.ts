@@ -1,5 +1,5 @@
 import { app } from "./app";
-import { logger } from "./commons/logger";
+import { logger } from "./utils/logger";
 import config from "./config/config";
 
 const PORT = config.port || 3000;

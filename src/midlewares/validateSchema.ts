@@ -1,4 +1,4 @@
-import { logger } from "../commons/logger";
+import { logger } from "../utils/logger";
 import { Request, Response, NextFunction } from "express";
 import { ZodSchema, ZodError } from "zod";
 

@@ -16,7 +16,9 @@ Crie uma aplicação Node.js usando Express.
 Configure o projeto para utilizar ORM com MongoDB (sugestão: Mongoose, mas pode escolher outro).
 Configure rotas básicas para operações CRUD em uma entidade fictícia "Produto", com campos: nome, preço e descrição.
 
-## Parte 2: Modelagem e CRUD
+<div id='parte2'/>
+
+## [Parte 2: Modelagem e CRUD](#parte2-an)
 
 Crie um modelo para "Produto" no MongoDB usando o ORM escolhido.
 Implemente rotas para operações CRUD na entidade "Produto", incluindo validações adequadas.
@@ -49,7 +51,7 @@ Documente quaisquer decisões de design ou considerações feitas durante o test
 
 <div id='parte1-an'/>
 
-## [Anotações Parte 1: Configuração do Projeto](#parte1)
+## [Parte 1: Configuração do Projeto](#parte1)
 
 - A escolha do ORM pelo prisma foi puramente por capricho, gostaria de aproveitar a oportunidade do teste para aprender algo novo
 - Algumas configurações e bibliotecas também estou utilizando ou configurando pela primeira vez, também aproveitando a oportunidade para aprender algo novo, mais detalhes nos tópicos abaixo
@@ -67,3 +69,12 @@ Documente quaisquer decisões de design ou considerações feitas durante o test
 - Achei desnecessário utilizar a entidade fíctia, já que que nessa parte já possui o ORM e o banco de dados configurados
 
 Tempo de conclusão: 6h
+
+<div id='parte2-an'/>
+
+## [Parte 2: Modelagem e CRUD](#parte2)
+
+- Essa parte foi extremamente mais simples do que a anterior. Tive apenas que adaptar um util para poder tratar erros de forma melhor.
+- Da maneira que fiz o sistema na etapa anterior também facilitou para implementear o banco de dados
+- Criei um env.example para colocar as variáveis necessárias para inciar o projeto
+- Trabalhar com o prisma em uma tarefa com pouco conteúdo foi bem simples, mas já consigo perceber algumas dificuldades em relação ao Mongoose

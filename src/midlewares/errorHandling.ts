@@ -1,5 +1,5 @@
-import { Request, Response, ErrorRequestHandler } from "express";
-import { logger } from "../commons/logger";
+import { Request, Response, ErrorRequestHandler, NextFunction } from "express";
+import { logger } from "../utils/logger";
 
 // middleware para tratamento de erros
 export class HttpError extends Error {
@@ -17,6 +17,8 @@ export const errorHandler: ErrorRequestHandler = (
   err,
   req: Request,
   res: Response,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _next: NextFunction,
 ) => {
   const status = err.status || 500;
   const message = err.message || "Something went wrong";
