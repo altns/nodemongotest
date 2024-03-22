@@ -12,28 +12,39 @@ import { validateSchema } from "../../midlewares/validateSchema";
 import { productSchema } from "./schema/product.schema";
 import { priceQuerySchema } from "./schema/price.schema";
 import { descriptionQuerySchema } from "./schema/description.schema";
+import { requireRole } from "@/midlewares/permission";
 
 const productRoutes = Router();
 
-// adiciona o midleware de autenticação em todas as rotas de produto
-
 productRoutes.post(
   "/product",
-
+  requireRole("ADM"),
   validateSchema(productSchema),
   create,
 );
-productRoutes.get("/product/:id", getById);
-productRoutes.put("/product/:id", validateSchema(productSchema), update);
-productRoutes.delete("/product/:id", deleteProductById);
-productRoutes.get("/products", listAll);
+productRoutes.get("/product/:id", requireRole("USER"), getById);
+
+productRoutes.put(
+  "/product/:id",
+  requireRole("ADM"),
+  validateSchema(productSchema),
+  update,
+);
+
+productRoutes.delete("/product/:id", requireRole("ADM"), deleteProductById);
+
+productRoutes.get("/products", requireRole("USER"), listAll);
+
 productRoutes.get(
   "/products/price",
+  requireRole("USER"),
   validateSchema(priceQuerySchema, "query"),
   getProductsAbovePrice,
 );
+
 productRoutes.get(
   "/products/description",
+  requireRole("USER"),
   validateSchema(descriptionQuerySchema, "query"),
   getProductsByDescription,
 );

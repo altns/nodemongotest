@@ -11,6 +11,7 @@ export const createUser = async (email: string, password: string) => {
     data: {
       email,
       password: hashedPassword,
+      role: "USER",
     },
   });
   return user;
@@ -25,6 +26,23 @@ export const loginUser = async (email: string, password: string) => {
   if (!isMatch) {
     throw new Error("Password is incorrect");
   }
-  const token = jwt.sign({ userId: user.id }, JWT_SECRET, { expiresIn: "1h" });
+  const token = jwt.sign(
+    { id: user.id, email: user.email, role: user.role }, // Inclua a role aqui
+    JWT_SECRET,
+    { expiresIn: "24h" },
+  );
   return token;
+};
+
+export const updateUserRole = async (
+  userEmail: string,
+  newRole: "ADM" | "USER",
+) => {
+  console.log("🚀 ~ userEmail:", userEmail);
+  console.log("🚀 ~ newRole:", newRole);
+  const updatedUser = await prisma.user.update({
+    where: { email: userEmail },
+    data: { role: newRole },
+  });
+  return updatedUser;
 };
