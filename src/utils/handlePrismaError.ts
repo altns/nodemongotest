@@ -1,4 +1,4 @@
-import { HttpError } from "../midlewares/errorHandling";
+import { HttpError } from "../middlewares/errorHandling";
 import { Prisma } from "@prisma/client";
 import { logger } from "./logger";
 

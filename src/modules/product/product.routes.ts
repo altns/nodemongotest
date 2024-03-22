@@ -8,11 +8,11 @@ import {
   listAll,
   update,
 } from "./controller/product.controller";
-import { validateSchema } from "../../midlewares/validateSchema";
+import { validateSchema } from "../../middlewares/validateSchema";
 import { productSchema } from "./schema/product.schema";
 import { priceQuerySchema } from "./schema/price.schema";
 import { descriptionQuerySchema } from "./schema/description.schema";
-import { requireRole } from "@/midlewares/permission";
+import { requireRole } from "@/middlewares/permission";
 
 const productRoutes = Router();
 

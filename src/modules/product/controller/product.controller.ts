@@ -8,7 +8,7 @@ import {
   listProductsByDescription,
   updateProduct,
 } from "../services/product.service";
-import { HttpError } from "../../../midlewares/errorHandling";
+import { HttpError } from "../../../middlewares/errorHandling";
 import { handlePrismaError } from "../../../utils/handlePrismaError";
 
 /**
