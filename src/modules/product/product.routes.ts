@@ -15,7 +15,14 @@ import { descriptionQuerySchema } from "./schema/description.schema";
 
 const productRoutes = Router();
 
-productRoutes.post("/product", validateSchema(productSchema), create);
+// adiciona o midleware de autenticação em todas as rotas de produto
+
+productRoutes.post(
+  "/product",
+
+  validateSchema(productSchema),
+  create,
+);
 productRoutes.get("/product/:id", getById);
 productRoutes.put("/product/:id", validateSchema(productSchema), update);
 productRoutes.delete("/product/:id", deleteProductById);
