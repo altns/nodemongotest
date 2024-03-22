@@ -1,14 +1,13 @@
-// src/routes/userRoutes.ts
 import express from "express";
 import {
   changeUserRole,
   login,
   registerUser,
 } from "./controller/auth.controller";
-import { validateSchema } from "@/midlewares/validateSchema";
+import { validateSchema } from "@/middlewares/validateSchema";
 import { userSchema } from "./schemas/user.schema";
-import { authenticate } from "@/midlewares/auth";
-import { requireRole } from "@/midlewares/permission";
+import { authenticate } from "@/middlewares/auth";
+import { requireRole } from "@/middlewares/permission";
 import { permissionSchema } from "./schemas/permission.schema";
 
 const authRoutes = express.Router();

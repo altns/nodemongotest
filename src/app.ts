@@ -2,8 +2,8 @@ import express from "express";
 import helmet from "helmet";
 import cors from "cors";
 import { router } from "./routes";
-import httpLogger from "./midlewares/httpLogger";
-import { HttpError, errorHandler } from "./midlewares/errorHandling";
+import httpLogger from "./middlewares/httpLogger";
+import { HttpError, errorHandler } from "./middlewares/errorHandling";
 
 // inicia express
 const app = express();

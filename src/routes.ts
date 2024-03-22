@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { productRoutes } from "./modules/product/product.routes";
 import authRoutes from "./modules/auth/auth.routes";
-import { authenticate } from "./midlewares/auth";
+import { authenticate } from "./middlewares/auth";
 
 // adiciona as rotas da api
 const router = Router();

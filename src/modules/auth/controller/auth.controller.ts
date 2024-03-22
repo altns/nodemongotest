@@ -39,7 +39,7 @@ export const changeUserRole = async (
   res: Response,
   next: NextFunction,
 ) => {
-  const { email, role } = req.body; // Ou ajuste conforme a sua estratégia de recebimento dos dados
+  const { email, role } = req.body;
 
   try {
     const updatedUser = await updateUserRole(email, role);
