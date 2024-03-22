@@ -30,6 +30,8 @@ Implemente rotas para operações CRUD na entidade "Produto", incluindo validaç
 Implemente uma rota para listar produtos com preço acima de um valor especificado.
 Crie uma rota para listar produtos contendo uma palavra-chave específica na descrição.
 
+<div id='parte4'/>
+
 ## Parte 4: Autenticação
 
 Implemente um método de autenticação de sua escolha.
@@ -92,3 +94,14 @@ Tempo de conclusão: 1h
 - Certas alterações em arquivos de maior complexidade eu sinto falta de testes unitários para manter o pleno funcionamento
 
 Tempo de conclusão: 10min
+
+<div id='parte4-an'/>
+
+## [Parte 4: Autenticação](#parte4)
+
+- A implementação do JWT em geral não teves grandes desafios utilizando jsonwebtoken e bcrypt
+- Grande parte do tempo para a conclusão foi com alguns problemas que tive utilizando o nodemon, diretórios dinâmicos e tipagem customizada para o request
+- Para resolver eu troquei o nodemon para o ts-node-dev, adicionei tsc-alias para os caminhos dinâmicos funcionarem no servidor de build e adicionei o tsconfig-path para os paths dinâmicos funcionarem com o ts-node-dev
+- Limpei os comentários do tsconfig,json que foi gerado automaticamente ao adicionar typescript no projeto também para ficar mais fácil de visualizar o que poderia estar errado nas configurações de tipos customizados e caminhos dinâmicos
+
+Tempo de conclusão: 2h

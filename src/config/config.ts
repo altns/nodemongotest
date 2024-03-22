@@ -9,6 +9,7 @@ const envVarsSchema = z.object({
   NODE_ENV: z.enum(["production", "development", "test"]).optional(),
   PORT: z.preprocess((input) => Number(input), z.number().default(3000)),
   DATABASE_URL: z.string().url(),
+  JWT_SECRET: z.string().min(128),
 });
 
 const parsedEnv = envVarsSchema.safeParse(process.env);
@@ -21,4 +22,5 @@ export default {
   env: parsedEnv.data.NODE_ENV,
   port: parsedEnv.data.PORT,
   databaseUrl: parsedEnv.data.DATABASE_URL,
+  jwtSecret: parsedEnv.data.JWT_SECRET,
 };
