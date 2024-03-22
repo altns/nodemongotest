@@ -27,7 +27,7 @@ export const loginUser = async (email: string, password: string) => {
     throw new Error("Password is incorrect");
   }
   const token = jwt.sign(
-    { id: user.id, email: user.email, role: user.role }, // Inclua a role aqui
+    { id: user.id, email: user.email, role: user.role },
     JWT_SECRET,
     { expiresIn: "24h" },
   );
@@ -38,8 +38,6 @@ export const updateUserRole = async (
   userEmail: string,
   newRole: "ADM" | "USER",
 ) => {
-  console.log("🚀 ~ userEmail:", userEmail);
-  console.log("🚀 ~ newRole:", newRole);
   const updatedUser = await prisma.user.update({
     where: { email: userEmail },
     data: { role: newRole },
