@@ -20,8 +20,9 @@ export const authenticate = (
     const decoded = jwt.verify(token, JWT_SECRET) as {
       id: string;
       email: string;
+      role: "ADM" | "USER";
     };
-    req.user = { id: decoded.id, email: decoded.email };
+    req.user = { id: decoded.id, email: decoded.email, role: decoded.role };
     next();
   } catch (error) {
     return res.status(403).json({ message: "Invalid token" });

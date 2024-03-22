@@ -105,3 +105,13 @@ Tempo de conclusão: 10min
 - Limpei os comentários do tsconfig,json que foi gerado automaticamente ao adicionar typescript no projeto também para ficar mais fácil de visualizar o que poderia estar errado nas configurações de tipos customizados e caminhos dinâmicos
 
 Tempo de conclusão: 2h
+
+<div id='parte5-an'/>
+
+## [Parte 5: Permissionamento](#parte5)
+
+- Não tive nenhuma dificuldade nessa etapa
+- Para implementar foi necessário apenas adicionar um novo campo no banco de dados, utilizei um enum para não ser possível outro valor
+- Para adicionar os níveis do usuário apenas criei novos com uma role definida, alterei um usuário para admin diretamente no mongodb e testei as permissões
+
+Tempo de conclusão: 30min
