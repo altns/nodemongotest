@@ -1,4 +1,3 @@
-// src/routes/userRoutes.ts
 import express from "express";
 import { login, registerUser } from "./controller/auth.controller";
 import { validateSchema } from "@/midlewares/validateSchema";
